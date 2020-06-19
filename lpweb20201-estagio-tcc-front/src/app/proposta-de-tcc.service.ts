@@ -17,4 +17,12 @@ export class PropostaDeTCCService {
   get(id) {
     return this.http.get(environment.API_URL.concat(`propostas-de-tcc/${id}/`), this.auth$.httpOptions());
   }
+
+  cadastrar(proposta:any){
+    return this.http.post(environment.API_URL.concat(`propostas-de-tcc/`), proposta, this.auth$.httpOptions());
+  }
+
+  update(proposta_tcc,id) {
+    return this.http.put(environment.API_URL.concat(`propostas-de-tcc/${id}/`),proposta_tcc, this.auth$.httpOptions());
+  }
 }

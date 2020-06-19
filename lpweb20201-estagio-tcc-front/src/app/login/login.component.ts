@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.user = this.auth$.user();
     if (this.user) {
-      this.router.navigate(['/perfil']);
+      this.router.navigate(['/inicio']);
     }
   }
 
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         delay(1000),
         concatMap(() => this.auth$.getDetalhesDoUsuarioLogado())
       ).subscribe(
-        () => this.router.navigate(['/perfil']),
+        () => this.router.navigate(['/inicio']),
         err => this.error = err.error
       );
     /*
